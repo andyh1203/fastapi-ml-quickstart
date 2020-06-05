@@ -43,8 +43,7 @@ def get_model():
     return model
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     X, y = load_boston(return_X_y=True)
     model.train(X, y)
     model.save()
-    
