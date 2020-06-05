@@ -2,7 +2,7 @@ version: '3'
 
 services:
   fastapi-ml-quickstart:
-    buiid: .
+    build: .
     ports:
       - 8000:8000
     entrypoint: ["pytest"]
