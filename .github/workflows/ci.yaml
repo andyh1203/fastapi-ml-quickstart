@@ -15,4 +15,4 @@ jobs:
       - name: Checking out the repository
         uses: actions/checkout@v1
       - name: Build the Docker image and run the tests
-        run: docker-compose -f docker-compose.test.yaml --abort-on-container-exit --exit-code-from fastapi-ml-quickstart
+        run: docker-compose -f docker-compose.test.yaml up --abort-on-container-exit --exit-code-from fastapi-ml-quickstart
