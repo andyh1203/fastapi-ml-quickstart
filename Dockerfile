@@ -1,17 +1,14 @@
 FROM ubuntu:19.10
 
-COPY ./api /api/api
-COPY poetry.lock /poetry.lock
-COPY pyproject.toml /pyproject.toml
+COPY . /app
+
+WORKDIR /app
 
 RUN apt-get update \
     && apt-get install curl python3-dev python3-pip -y \
     && pip3 install poetry \
     && poetry config virtualenvs.create false \
     && poetry install
-
-ENV PYTHONPATH=/api
-WORKDIR /api
 
 EXPOSE 8000
 
