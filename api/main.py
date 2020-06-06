@@ -37,10 +37,10 @@ def predict(input: PredictRequest, model: Model = Depends(get_model)):
 
 
 @app.post("/predict_csv")
-def predict(csv_file: UploadFile = File(...), model: Model = Depends(get_model)):
+def predict_csv(csv_file: UploadFile = File(...), model: Model = Depends(get_model)):
     try:
         df = pd.read_csv(csv_file.file).astype(float)
-    except:
+    except Exception:
         raise HTTPException(
             status_code=HTTP_422_UNPROCESSABLE_ENTITY, detail="Unable to process file"
         )

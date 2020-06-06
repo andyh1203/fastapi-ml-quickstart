@@ -29,7 +29,7 @@ class Model:
     def load(self):
         try:
             self._model = joblib.load(self._model_path)
-        except:
+        except Exception:
             self._model = None
         return self
 
